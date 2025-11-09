@@ -38,3 +38,6 @@ alias lzd='lazydocker'
 alias dps='docker ps'
 alias dpull='docker pull'
 alias drun='docker run'
+
+# Git aliases TODO
+alias lzg='lazygit'

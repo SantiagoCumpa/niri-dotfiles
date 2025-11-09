@@ -73,18 +73,18 @@ start_lsp({ "dockerfile", "yaml.docker-compose" }, {
 
 start_lsp({ "yaml.docker-compose" }, {
 	name = "compose-lsp",
-	cmd = { "docker-compose-language-service", "--stdio" },
+	cmd = { "docker-compose-langserver", "--stdio" },
 	filetypes = { "yaml.docker-compose" },
 	root_markers = { "docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml" },
-	single_file_support = true,
+	-- single_file_support = true,
 })
 
--- start_lsp({ "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.helm-values" }, {
--- 	name = "yaml_lsp",
--- 	cmd = { "yaml-language-server", "--stdio" },
--- 	settings = {
--- 		redhat = { telemetry = { enabled = false } },
--- 		yaml = { format = { enable = true } },
--- 	},
--- 	root_markers = { ".git" },
--- })
+start_lsp({ "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.helm-values" }, {
+	name = "yaml_lsp",
+	cmd = { "yaml-language-server", "--stdio" },
+	settings = {
+		redhat = { telemetry = { enabled = false } },
+		yaml = { format = { enable = true } },
+	},
+	root_markers = { ".git" },
+})
