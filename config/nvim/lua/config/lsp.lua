@@ -88,3 +88,9 @@ start_lsp({ "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.helm-values" }, 
 	},
 	root_markers = { ".git" },
 })
+
+start_lsp({ "*" }, {
+	name = "copilot_lsp",
+	cmd = { "copilot-language-server", "--stdio" },
+	root_markers = { ".git" },
+})

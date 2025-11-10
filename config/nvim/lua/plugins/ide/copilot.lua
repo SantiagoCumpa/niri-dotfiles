@@ -1,12 +1,13 @@
 return {
 	{
-		"CopilotC-Nvim/CopilotChat.nvim",
+		"github/copilot.vim",
+	},
+	{
+		"NickvanDyke/opencode.nvim",
 		dependencies = {
-			{ "nvim-lua/plenary.nvim", branch = "master" },
-		},
-		build = "make tiktoken",
-		opts = {
-			-- See Configuration section for options
+			-- Recommended for `ask()` and `select()`.
+			-- Required for default `toggle()` implementation.
+			{ "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
 		},
 	},
 }

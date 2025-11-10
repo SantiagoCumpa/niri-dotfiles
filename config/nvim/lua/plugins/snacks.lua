@@ -1,4 +1,5 @@
 return {
+
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
@@ -23,20 +24,15 @@ return {
 		},
 		dashboard = { enable = true },
 		lazygit = { enable = true },
-		explorer = {
-			-- replace_netrw = true,
-			trash = true,
-			git_status = true,
-		},
+		-- explorer = {
+		-- 	-- replace_netrw = true,
+		-- 	trash = true,
+		-- 	git_status = true,
+		-- },
 		picker = {
 			enable = true,
-			sources = {
-				explorer = {
-					title = "File Explorer",
-				},
-			},
 		},
-		zen = { enable = true },
+		zen = { enable = true, toggles = { dim = false } },
 	},
 	keys = {
 		-- Terminal toggle
@@ -69,7 +65,7 @@ return {
 		{
 			"<leader>te",
 			function()
-				Snacks.explorer()
+				Snacks.explorer.open()
 			end,
 			desc = "Open File Explorer",
 		},

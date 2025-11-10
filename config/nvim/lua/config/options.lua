@@ -34,3 +34,4 @@ vim.filetype.add({
 vim.cmd.colorscheme("catppuccin")
 vim.opt.termguicolors = true
 vim.o.laststatus = 3
+vim.opt.cmdheight = 0

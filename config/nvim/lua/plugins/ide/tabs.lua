@@ -12,7 +12,7 @@ return {
 	-- },
 	opts = {
 		options = {
-			indicators = {
+			indicator = {
 				style = "underline",
 			},
 			numbers = function(opts)
@@ -33,7 +33,6 @@ return {
 					-- filetype = "snacks_picker_list",
 					text = "File Explorer",
 					highlight = "Directory",
-					separator = true, -- use a "true" to enable the default, or set your own character
 				},
 			},
 		},
