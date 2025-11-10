@@ -19,10 +19,11 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
-	-- { import = "plugins.navigation" },
-	-- { import = "plugins.ui" },
+	{ import = "plugins.navigation" },
+	{ import = "plugins.ide" },
+	{ import = "plugins" },
 	{ import = "plugins.coding" },
-	{ import = "plugins.extra" },
+	{ import = "plugins.helpers" },
 }, {
 	install = { colorscheme = { "catppuccin" } },
 	checker = { enabled = true },

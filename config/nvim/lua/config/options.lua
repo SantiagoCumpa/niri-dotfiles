@@ -30,3 +30,7 @@ vim.filetype.add({
 		["compose.yaml"] = "yaml.docker-compose",
 	},
 })
+
+vim.cmd.colorscheme("catppuccin")
+vim.opt.termguicolors = true
+vim.o.laststatus = 3

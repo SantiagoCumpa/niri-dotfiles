@@ -1,11 +1,8 @@
 -- Lazy plugin manager
 require("config.lazy")
 
--- Mini deps plugin manager
--- require("config.mini")
+-- Lsp Server
+require("config.lsp")
 
 -- Neovim Options
 require("config.options")
-
--- Lsp Server
-require("config.lsp")

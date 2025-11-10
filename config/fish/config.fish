@@ -19,7 +19,7 @@ set -gx FZF_DEFAULT_OPTS "\
 alias ls='eza --icons -lha --group-directories-first'
 alias tree='eza --icons --tree --group-directories-first'
 alias bat='bat --color=always'
-alias spac='sudo pacman'
+alias sup='sudo pacman'
 
 # Git aliases
 alias gini='git init'
@@ -38,3 +38,6 @@ alias lzd='lazydocker'
 alias dps='docker ps'
 alias dpull='docker pull'
 alias drun='docker run'
+
+# Git aliases TODO
+alias lzg='lazygit'

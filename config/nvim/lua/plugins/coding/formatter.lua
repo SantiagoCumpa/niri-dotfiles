@@ -6,7 +6,7 @@ return {
 			python = { "isort", "black" },
 			javascript = { "prettierd", "prettier", stop_after_first = true },
 			-- rust = {},
-			yaml = { "yamlfmt" },
+			-- yaml = { "yamlfmt" },
 		},
 		format_on_save = {
 			timeout_ms = 500,

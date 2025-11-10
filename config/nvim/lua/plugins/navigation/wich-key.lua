@@ -5,13 +5,13 @@ return {
 		preset = "helix",
 		defaults = {},
 	},
-	-- keys = {
-	-- 	{
-	-- 		"<leader>?",
-	-- 		function()
-	-- 			require("which-key").show({ global = false })
-	-- 		end,
-	-- 		desc = "Buffer Local Keymaps (which-key)",
-	-- 	},
-	-- },
+	keys = {
+		{
+			"<leader>?",
+			function()
+				require("which-key").show({ global = false })
+			end,
+			desc = "Buffer Local Keymaps (which-key)",
+		},
+	},
 }
