@@ -78,6 +78,10 @@
 #idle_inhibitor {
  	color: @gray400;
 }
+#idle_inhibitor.activated {
+ 	color: @gray100;
+}
+
 
 /*---MUSIC---*/
 #custom-music {
