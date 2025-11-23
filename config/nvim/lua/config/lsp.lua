@@ -9,86 +9,73 @@ local function start_lsp(filetype, opts)
 	})
 end
 
-start_lsp({ "lua" }, {
-	name = "lua_lsp",
-	cmd = { "lua-language-server" },
-	root_markers = { ".git", ".luacheckrc", ".stylua.toml" },
-	settings = {
-		Lua = {
-			diagnostics = {
-				enable = false,
+local servers = {
+	"lua_ls",
+	"typescript_ls",
+	"python_ls",
+	"rust_ls",
+	"docker_ls",
+	"compose_ls",
+	"css_ls",
+	"html_ls",
+	"eslint_ls",
+	"json_ls",
+	"c_ls",
+	"sql_ls",
+	"fish_ls",
+	"bash_ls",
+	"yaml_ls",
+}
+
+local function get_capabilities()
+	-- Check if blink.cmp is available
+	local has_blink, blink = pcall(require, "blink.cmp")
+
+	if has_blink and blink.get_lsp_capabilities then
+		-- Merge default capabilities with blink.cmp capabilities
+		return vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), blink.get_lsp_capabilities(), {
+			-- Additional capabilities can be added here
+			workspace = {
+				fileOperations = {
+					didRename = true,
+					willRename = true,
+				},
 			},
-		},
-	},
-})
+		})
+	else
+		-- Fallback to default capabilities if blink.cmp is not available
+		return vim.lsp.protocol.make_client_capabilities()
+	end
+end
 
-start_lsp({
-	"javascript",
-	"javascriptreact",
-	"typescript",
-	"typescriptreact",
-	"javascript.jsx",
-	"typescript.tsx",
-}, {
-	name = "typescript_lsp",
-	cmd = { "vtsls", "--stdio" },
-	root_markers = { "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lockb", "bun.lock", ".git" },
-})
+local capabilities = get_capabilities()
 
-start_lsp({ "python" }, {
-	name = "python_lsp",
-	cmd = { "pyright-langserver", "--stdio" },
-	root_markers = {
-		"pyrightconfig.json",
-		"pyproject.toml",
-		"setup.py",
-		"setup.cfg",
-		"requirements.txt",
-		"Pipfile",
-		".git",
-	},
-})
+for _, server_name in ipairs(servers) do
+	-- Load server-specific config from lsp/<server-name>.lua
+	local config_path = vim.fn.stdpath("config") .. "/lsp/" .. server_name .. ".lua"
 
-start_lsp({ "rust" }, {
-	name = "rust_lsp",
-	cmd = { "rust-analyzer" },
-	root_markers = { "Cargo.toml", ".git" },
-})
+	local ok, server_config
 
-start_lsp({ "dockerfile", "yaml.docker-compose" }, {
-	name = "docker_lsp",
-	cmd = { "docker-language-server", "start", "--stdio" },
-	root_markers = {
-		"Dockerfile",
-		"docker-compose.yaml",
-		"docker-compose.yml",
-		"compose.yaml",
-		"compose.yml",
-		"docker-bake.json",
-		"docker-bake.hcl",
-		"docker-bake.override.json",
-		"docker-bake.override.hcl",
-	},
-})
+	if vim.fn.filereadable(config_path) == 1 then
+		ok, server_config = pcall(dofile, config_path)
+	end
 
-start_lsp({ "yaml.docker-compose" }, {
-	name = "compose-lsp",
-	cmd = { "docker-compose-langserver", "--stdio" },
-	filetypes = { "yaml.docker-compose" },
-	root_markers = { "docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml" },
-	-- single_file_support = true,
-})
+	if not ok or type(server_config) ~= "table" then
+		vim.notify(string.format("Failed to load config for %s, using defaults", server_name), vim.log.levels.WARN)
+		server_config = {}
+	end
 
-start_lsp({ "yaml", "yaml.docker-compose", "yaml.gitlab", "yaml.helm-values" }, {
-	name = "yaml_lsp",
-	cmd = { "yaml-language-server", "--stdio" },
-	settings = {
-		redhat = { telemetry = { enabled = false } },
-		yaml = { format = { enable = true } },
-	},
-	root_markers = { ".git" },
-})
+	-- Attach capabilities
+	server_config.capabilities = vim.tbl_deep_extend("force", capabilities, server_config.capabilities or {})
 
+	if server_config.filetypes then
+		start_lsp(server_config.filetypes, server_config)
+	else
+		vim.notify(string.format("Server %s has no filetypes defined", server_name), vim.log.levels.WARN)
+	end
+end
+
+-- COPILOT_LSP
 start_lsp({ "*" }, {
 	name = "copilot_lsp",
 	cmd = { "copilot-language-server", "--stdio" },

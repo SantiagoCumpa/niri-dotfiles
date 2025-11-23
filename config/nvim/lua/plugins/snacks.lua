@@ -1,5 +1,4 @@
 return {
-
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
@@ -61,13 +60,6 @@ return {
 			end,
 			desc = "Toggle lazygit",
 			mode = { "n", "t" },
-		},
-		{
-			"<leader>te",
-			function()
-				Snacks.explorer.open()
-			end,
-			desc = "Open File Explorer",
 		},
 		{
 			"<leader>tz",

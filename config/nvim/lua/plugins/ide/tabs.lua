@@ -1,5 +1,8 @@
 return {
 	"akinsho/bufferline.nvim",
+	dependencies = {
+		"nvim-mini/mini.icons",
+	},
 	version = "*",
 	-- event = "VeryLazy",
 	-- keys = {
@@ -27,11 +30,30 @@ return {
 				end
 				return s
 			end,
+			get_element_icon = function(element)
+				local icons = require("mini.icons")
+
+				-- get icon by file name first
+				local text, hl = icons.get("extension", element.extension)
+
+				if not text then
+					text, hl = icons.get("file", element.filetype)
+				end
+
+				if not text then
+					text, hl = "", "MiniIconsDefault"
+				end
+				--
+				return text, hl
+			end,
 			offsets = {
 				{
 					filetype = "neo-tree",
-					-- filetype = "snacks_picker_list",
-					text = "File Explorer",
+					-- text = "File Explorer",
+					text = " ",
+					-- text = function()
+					-- 	return vim.fn.getcwd()
+					-- end,
 					highlight = "Directory",
 				},
 			},

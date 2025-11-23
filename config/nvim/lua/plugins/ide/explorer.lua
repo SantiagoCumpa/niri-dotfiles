@@ -4,9 +4,9 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
-		"nvim-tree/nvim-web-devicons", -- optional, but recommended
+		"nvim-mini/mini.icons",
 	},
-	lazy = false, -- neo-tree will lazily load itself
+	lazy = false,
 	opts = {
 		source_selector = {
 			winbar = true,
@@ -29,6 +29,29 @@ return {
 				expander_collapsed = "",
 				expander_expanded = "",
 				expander_highlight = "NeoTreeExpander",
+			},
+			icon = {
+				provider = function(icon, node) -- setup a custom icon provider
+					local text, hl
+					local mini_icons = require("mini.icons")
+					if node.type == "file" then -- if it's a file, set the text/hl
+						text, hl = mini_icons.get("file", node.name)
+					elseif node.type == "directory" then -- get directory icons
+						text, hl = mini_icons.get("directory", node.name)
+						-- only set the icon text if it is not expanded
+						if node:is_expanded() then
+							text = nil
+						end
+					end
+
+					-- set the icon text/highlight only if it exists
+					if text then
+						icon.text = text
+					end
+					if hl then
+						icon.highlight = hl
+					end
+				end,
 			},
 		},
 	},
