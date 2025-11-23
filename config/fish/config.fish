@@ -1,6 +1,6 @@
 if status is-interactive
-   set -g fish_greeting ""	
-   fastfetch
+    set -g fish_greeting ""
+    fastfetch
 end
 
 # Variables
@@ -14,10 +14,10 @@ set -gx FZF_DEFAULT_OPTS "\
    --color=selected-bg:#45475A \
    --color=border:#6C7086,label:#CDD6F4 \
    --style full"
-   
+
 # General aliases
 alias ls='eza --icons -lha --group-directories-first'
-alias tree='eza --icons --tree --group-directories-first'
+alias tree='eza --icons --tree --level 3 --group-directories-first'
 alias bat='bat --color=always'
 alias sup='sudo pacman'
 
@@ -34,10 +34,10 @@ alias gpll='git pull'
 alias glog='git log'
 
 # Docker aliases
-alias lzd='lazydocker'
+alias ld='lazydocker'
 alias dps='docker ps'
 alias dpull='docker pull'
 alias drun='docker run'
 
 # Git aliases TODO
-alias lzg='lazygit'
+alias lg='lazygit'
