@@ -16,7 +16,7 @@ set -gx FZF_DEFAULT_OPTS "\
    --style full"
 
 # General aliases
-alias ls='eza --icons -lha --group-directories-first'
+alias ls='eza --icons -lh --group-directories-first'
 alias tree='eza --icons --tree --level 3 --group-directories-first'
 alias bat='bat --color=always'
 alias sup='sudo pacman'
