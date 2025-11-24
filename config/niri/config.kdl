@@ -60,7 +60,7 @@ output "DP-1" {
 
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-    gaps 15
+    gaps 20
     center-focused-column "never"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
@@ -105,7 +105,7 @@ binds {
     Mod+W repeat=false { close-window; }
     Mod+Return    { spawn "kitty"; }
     Mod+B         { spawn "firefox"; }
-    Mod+E         { spawn "kitty" "--class" "yazi" "-e" "yazi"; }
+    Mod+E         { spawn "kitty" "--class" "fm" "-e" "spf"; }
     Mod+L         { spawn "hyprlock"; }
     Mod+Q         { spawn ".config/rofi/launcher.sh"; }
     Mod+P         { spawn ".config/rofi/colorpicker.sh"; }
@@ -212,7 +212,7 @@ window-rule {
 	default-window-height { fixed 800; }
 }
 window-rule {
-	match app-id="yazi"
+	match app-id="fm"
 	open-floating true
 	opacity 0.95
 	default-column-width { fixed 1400; }
@@ -220,5 +220,5 @@ window-rule {
 }
 window-rule {
 	match app-id="kitty"
-	opacity 0.95
+	opacity 0.90
 }
