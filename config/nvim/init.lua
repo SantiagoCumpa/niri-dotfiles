@@ -8,5 +8,4 @@ require("config.lsp")
 require("config.options")
 
 -- Theme
--- require("config.colorscheme")
 require("config.colorscheme").setup()

@@ -34,6 +34,15 @@ return {
 		zen = { enable = true, toggles = { dim = false } },
 	},
 	keys = {
+		-- Focus file explorer
+		{
+			"<leader>te",
+			function()
+				vim.cmd("Neotree")
+			end,
+			desc = "Toggle file explorer",
+			mode = { "n", "t" },
+		},
 		-- Terminal toggle
 		{
 			"<leader>tt",
@@ -58,7 +67,7 @@ return {
 			function()
 				Snacks.terminal({ "lazydocker" })
 			end,
-			desc = "Toggle lazygit",
+			desc = "Toggle lazydocker",
 			mode = { "n", "t" },
 		},
 		{
@@ -66,7 +75,7 @@ return {
 			function()
 				Snacks.zen()
 			end,
-			desc = "Open File Explorer",
+			desc = "Toggle zen mode",
 		},
 
 		{

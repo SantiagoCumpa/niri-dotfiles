@@ -14,7 +14,6 @@ return {
 			bash = { "shfmt" },
 			fish = { "fish_indent" },
 			toml = { "tombi" },
-			dockerfile = { "dockerfmt" },
 		},
 		format_on_save = {
 			timeout_ms = 500,

@@ -15,9 +15,7 @@ return {
 				"yq", -- YAML/Json
 				"clang-format", -- C/C++
 				"shfmt", -- Bash
-				-- "fish_indent", -- Fish
 				"tombi", -- TOML
-				-- "dockerfmt", -- Docker
 
 				-- LSP
 				"pyright", -- Python

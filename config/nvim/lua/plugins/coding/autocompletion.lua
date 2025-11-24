@@ -8,7 +8,18 @@ return {
 	},
 	version = "1.*",
 	opts = {
-		keymap = { preset = "super-tab" },
+		keymap = {
+			preset = "none",
+			["<C-k>"] = { "select_prev", "fallback" },
+			["<C-j>"] = { "select_next", "fallback" },
+			["<C-space>"] = {
+				function(cmp)
+					cmp.show({ providers = { "snippets" } })
+				end,
+			},
+			["<C-y>"] = { "accept", "fallback" },
+			["<C-s>"] = { "show_signature", "hide_signature", "fallback" },
+		},
 		appearance = {
 			nerd_font_variant = "mono",
 		},
@@ -21,47 +32,47 @@ return {
 				auto_show = false,
 				max_height = 10,
 				scrollbar = true,
-				draw = {
-					columns = { { "kind_icon" }, { "label" }, { "kind" } },
-					components = {
-						kind_icon = {
-							text = function(ctx)
-								if vim.tbl_contains({ "Path" }, ctx.source_name) then
-									local mini_icon, _ = require("mini.icons").get_icon(ctx.item.data.type, ctx.label)
-									if mini_icon then
-										return mini_icon .. ctx.icon_gap
-									end
-								end
-
-								local icon = require("lspkind").symbolic(ctx.kind, { mode = "symbol" })
-								return icon .. ctx.icon_gap
-							end,
-
-							highlight = function(ctx)
-								if vim.tbl_contains({ "Path" }, ctx.source_name) then
-									local mini_icon, mini_hl =
-										require("mini.icons").get_icon(ctx.item.data.type, ctx.label)
-									if mini_icon then
-										return mini_hl
-									end
-								end
-								return ctx.kind_hl
-							end,
-						},
-						kind = {
-							highlight = function(ctx)
-								if vim.tbl_contains({ "Path" }, ctx.source_name) then
-									local mini_icon, mini_hl =
-										require("mini.icons").get_icon(ctx.item.data.type, ctx.label)
-									if mini_icon then
-										return mini_hl
-									end
-								end
-								return ctx.kind_hl
-							end,
-						},
-					},
-				},
+				-- draw = {
+				-- 	columns = { { "kind_icon" }, { "label" }, { "kind" } },
+				-- 	components = {
+				-- 		kind_icon = {
+				-- 			text = function(ctx)
+				-- 				if vim.tbl_contains({ "Path" }, ctx.source_name) then
+				-- 					local mini_icon, _ = require("mini.icons").get_icon(ctx.item.data.type, ctx.label)
+				-- 					if mini_icon then
+				-- 						return mini_icon .. ctx.icon_gap
+				-- 					end
+				-- 				end
+				--
+				-- 				local icon = require("lspkind").symbolic(ctx.kind, { mode = "symbol" })
+				-- 				return icon .. ctx.icon_gap
+				-- 			end,
+				--
+				-- 			highlight = function(ctx)
+				-- 				if vim.tbl_contains({ "Path" }, ctx.source_name) then
+				-- 					local mini_icon, mini_hl =
+				-- 						require("mini.icons").get_icon(ctx.item.data.type, ctx.label)
+				-- 					if mini_icon then
+				-- 						return mini_hl
+				-- 					end
+				-- 				end
+				-- 				return ctx.kind_hl
+				-- 			end,
+				-- 		},
+				-- 		kind = {
+				-- 			highlight = function(ctx)
+				-- 				if vim.tbl_contains({ "Path" }, ctx.source_name) then
+				-- 					local mini_icon, mini_hl =
+				-- 						require("mini.icons").get_icon(ctx.item.data.type, ctx.label)
+				-- 					if mini_icon then
+				-- 						return mini_hl
+				-- 					end
+				-- 				end
+				-- 				return ctx.kind_hl
+				-- 			end,
+				-- 		},
+				-- 	},
+				-- },
 			},
 		},
 	},

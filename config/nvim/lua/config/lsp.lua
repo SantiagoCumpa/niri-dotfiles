@@ -25,6 +25,7 @@ local servers = {
 	"fish_ls",
 	"bash_ls",
 	"yaml_ls",
+	"toml_ls",
 }
 
 local function get_capabilities()
