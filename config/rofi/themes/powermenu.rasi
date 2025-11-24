@@ -36,7 +36,7 @@ textbox {
 
 listview {
     enabled:                     true;
-    columns:                     4;
+    columns:                     5;
     lines:                       1;
     layout:                      vertical;
     spacing:                     15px;
