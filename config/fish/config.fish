@@ -3,17 +3,14 @@ if status is-interactive
     fastfetch
 end
 
-# Variables
-set -gx MICRO_TRUECOLOR 1
-
 # FZF Default Style
 set -gx FZF_DEFAULT_OPTS "\
-   --color=bg+:#313244,bg:#000000,spinner:#F5E0DC,hl:#F38BA8 \
-   --color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
-   --color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#FFFFFF,hl+:#F38BA8 \
-   --color=selected-bg:#45475A \
-   --color=border:#6C7086,label:#CDD6F4 \
-   --style full"
+  --color=bg+:#1c1c22,bg:#000000,spinner:#e0e1e6,hl:#9a9a9e \
+  --color=fg:#f2f2f4,header:#ababaf,info:#cfcfd1,pointer:#e0e1e6 \
+  --color=marker:#75757a,fg+:#ffffff,prompt:#ffffff,hl+:#bdbdc0 \
+  --color=selected-bg:#3e3e44 \
+  --color=border:#636368,label:#e0e1e6 \
+  --style=full"
 
 # General aliases
 alias ls='eza --icons -lh --group-directories-first'
@@ -22,6 +19,7 @@ alias bat='bat --color=always'
 alias sup='sudo pacman'
 
 # Git aliases
+alias lg='lazygit'
 alias gini='git init'
 alias gend='rm -r .git'
 alias gclo='git clone'
@@ -38,6 +36,3 @@ alias ld='lazydocker'
 alias dps='docker ps'
 alias dpull='docker pull'
 alias drun='docker run'
-
-# Git aliases TODO
-alias lg='lazygit'
