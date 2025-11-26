@@ -1,21 +1,20 @@
 # Colors
 
 font=JetBrainsMono Nerd Font 10
-background-color=#11111B
+background-color=#000000
 padding=10
-border-radius=5
 width=310
 height=200
 icons=1
 default-timeout=3000
 format=<b>%s</b>\n%b
 max-icon-size=48
-anchor=top-center
+anchor=top-right
 max-visible=4
-outer-margin=10,0,0 
+outer-margin=20,20 
 
-text-color=#cba6f7
-border-color=#cba6f7
+text-color=#b8b8b8
+border-color=#b8b8b8
 
 [app-name=gray]
 text-color=#bac2de
