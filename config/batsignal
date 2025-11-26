@@ -1,0 +1,22 @@
+# Run in background
+-b
+# Charging / Discharging
+-p
+# Expire notifications
+-e
+# Warning
+-w
+20
+# Critical
+-c
+10
+# Danger
+-d 
+5
+# Full
+-f
+95
+# Seconds
+-m
+5
+
