@@ -33,6 +33,7 @@ input {
     touchpad {
         tap
         natural-scroll
+        accel-speed 0.5
     }
 
     mouse {
@@ -73,7 +74,7 @@ layout {
         // fixed 1920
     }
     // preset-window-heights { }
-    default-column-width { proportion 1.0; }
+    default-column-width { proportion 0.5; }
 
     // You can change how the focus ring looks.
     focus-ring {
@@ -175,7 +176,7 @@ binds {
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R  { reset-window-height; }
     Mod+F       { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Shift+Mod+F { fullscreen-window; }
 
     Mod+C { center-column; }
 
@@ -213,6 +214,13 @@ window-rule {
 }
 window-rule {
 	match app-id="fm"
+	open-floating true
+	opacity 0.95
+	default-column-width { fixed 1400; }
+	default-window-height { fixed 800; }
+}
+window-rule {
+	match app-id="lazy"
 	open-floating true
 	opacity 0.95
 	default-column-width { fixed 1400; }
