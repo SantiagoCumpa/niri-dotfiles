@@ -1,5 +1,6 @@
 7zip
 bat
+batsignal
 bluetui
 bluez
 bluez-utils
@@ -8,6 +9,8 @@ btop
 cliphist
 cmake
 docker
+docker-compose
+efibootmgr
 eza
 fastfetch
 fd
@@ -20,7 +23,6 @@ hypridle
 hyprlock
 hyprpaper
 hyprpicker
-hyprshot
 impala
 iwd
 kitty
@@ -28,8 +30,6 @@ lazydocker
 lazygit
 lib32-nvidia-utils
 libnotify
-linux
-linux-firmware
 luarocks
 ly
 mako
@@ -44,10 +44,6 @@ nvidia-settings
 otf-geist-mono-nerd
 papirus-icon-theme
 pavucontrol
-pipewire
-pipewire-alsa
-pipewire-jack
-pipewire-pulse
 poppler
 resvg
 ripgrep
@@ -69,6 +65,7 @@ wget
 wireplumber
 wl-clipboard
 wlsunset
+xdg-desktop-portal-gnome
 xorg-xwayland
 yazi
 zip
