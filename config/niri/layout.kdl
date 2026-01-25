@@ -1,0 +1,34 @@
+// https://yalter.github.io/niri/Configuration:-Layout
+layout {
+    gaps 20
+    center-focused-column "never"
+
+    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
+    preset-column-widths {
+        proportion 0.3
+        proportion 0.5
+        proportion 0.8
+
+        // Fixed sets the width in logical pixels exactly.
+        // fixed 1920
+    }
+    // preset-window-heights { }
+    default-column-width { proportion 0.5; }
+
+    // You can change how the focus ring looks.
+    focus-ring {
+    	off
+    }
+
+    border { 
+	on
+    	width 2
+   		active-color "#d1d1d1"
+   		inactive-color "#505050"
+
+   		// Color of the border around windows that request your attention.
+   		urgent-color "#9b0000"
+    }
+    shadow {}
+    struts {}
+}
