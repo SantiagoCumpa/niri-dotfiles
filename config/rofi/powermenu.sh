@@ -25,7 +25,7 @@ $LOCK)
   sleep 0.3
   hyprlock
   ;;
-$LOGOUT) hyprctl dispatch exit ;;
+$LOGOUT) niri msg action quit ;;
 $SUSPEND) systemctl sleep ;;
 $REBOOT) systemctl reboot ;;
 $SHUTDOWN) systemctl poweroff ;;
