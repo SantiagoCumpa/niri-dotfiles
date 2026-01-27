@@ -1,0 +1,53 @@
+{
+  "name": "My Theme",
+  "author": "John Meguerian",
+  "themes": [
+    {
+      "name": "Dark",
+      "appearance": "dark",
+      "style": {
+        "background": "#222",
+        "syntax": {
+          "attribute": {
+            "color": "#ffa7a7",
+            "font_style": null,
+            "font_weight": null
+          }
+        },
+        "players": [],
+        "editor.active_line.background": "#333333",
+        "drop_target.background": "#444444",
+        "editor.active_line_number": "",
+        "editor.active_wrap_guide": null,
+        "editor.foreground": null,
+        "editor.gutter.background": null,
+        "editor.line_number": "#777",
+        "editor.wrap_guide": null,
+        "elevated_surface.background": "#111",
+        "panel.background": "#333",
+        "status_bar.background": "#333",
+        "surface.background": "#333",
+        "title_bar.background": "#333",
+        "toolbar.background": "#222",
+        "tab.active_background": "#222",
+        "border": "#444",
+        "tab.inactive_background": "#333",
+        "tab_bar.background": "#333",
+        "text": "#ededed",
+        "text.accent": "#ffffff",
+        "text.disabled": "#818181",
+        "text.muted": "#ababab",
+        "border.focused": "#ebebeb",
+        "border.selected": "#ebebeb",
+        "element.background": "#333333",
+        "element.hover": "#505050",
+        "element.selected": "#525252",
+        "ghost_element.hover": null,
+        "icon": null,
+        "icon.accent": null,
+        "icon.muted": null
+      }
+    }
+  ],
+  "id": "Fr3o70aIss817yNv8T6xk"
+}
