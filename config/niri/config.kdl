@@ -5,12 +5,22 @@ include "keybinds.kdl"
 include "windowrules.kdl"
 include "layout.kdl"
 include "overview.kdl"
+include "env.kdl"
+
+hotkey-overlay {
+    skip-at-startup
+}
 
 prefer-no-csd
 
 // You can also set this to null to disable saving screenshots to disk.
 screenshot-path null
 // screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+xwayland-satellite {
+    path "xwayland-satellite"
+}
+
 
 // Animations
 // https://yalter.github.io/niri/Configuration:-Animations
