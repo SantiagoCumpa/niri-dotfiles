@@ -1,4 +1,6 @@
 7zip
+base
+base-devel
 bat
 batsignal
 bluetui
@@ -10,7 +12,6 @@ cliphist
 cmake
 docker
 docker-compose
-efibootmgr
 eza
 fastfetch
 fd
@@ -19,6 +20,7 @@ fish
 fzf
 git
 github-cli
+gnome-keyring
 hypridle
 hyprlock
 hyprpaper
@@ -30,13 +32,16 @@ lazydocker
 lazygit
 lib32-nvidia-utils
 libnotify
+libpulse
+linux
+linux-firmware
 luarocks
 ly
 mako
 man-db
+nautilus
 neovim
 niri
-npm
 ntfs-3g
 nvidia-open
 nvidia-prime
@@ -50,8 +55,8 @@ ripgrep
 rofi
 rustup
 satty
+seahorse
 snapper
-sof-firmware
 superfile
 termscp
 ttf-cascadia-mono-nerd
@@ -64,7 +69,6 @@ wget
 wireplumber
 wl-clipboard
 wlsunset
-xdg-desktop-portal-gnome
 xorg-xwayland
-yazi
 zip
+zram-generator
