@@ -12,7 +12,7 @@
 /*---WAYBAR---*/
 #waybar {
 	background: @mantle;
-	border: 0.5px solid @mauve;
+	border: 1px solid @mauve;
 }
 
 /*---WORKSPACES---*/
