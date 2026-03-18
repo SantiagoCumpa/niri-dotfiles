@@ -1,32 +1,30 @@
-#!/bin/bash
-
-# Uptime
-UPTIME=$(uptime -p | sed -e 's/up //g')
+#!/usr/bin/env bash
 
 # Options
-LOCK='󰌾'
-LOGOUT='󰍃'
-SUSPEND='󰤄'
-REBOOT=''
-SHUTDOWN='󰤆'
+lock=''
+sleep='󰒲'
+logout='󰍃'
+reboot=''
+shutdown=''
 
-# Rofi launcher
-launch_rofi() {
-  rofi -dmenu \
-    -mesg "Uptime: $UPTIME" \
-    -theme $ROFI_PATH/powermenu.rasi
+# Uptime
+uptime="$(uptime -p | sed -e 's/up //g')"
+
+# Rofi CMD
+powermenu() {
+  echo -e "$lock\n$sleep\n$logout\n$reboot\n$shutdown\n" |
+    rofi -dmenu \
+      -p "Uptime: $uptime" \
+      -mesg "Uptime: $uptime" \
+      -theme ./powermenu.rasi
 }
 
-# Select option
-OPTION=$(echo -en "$LOCK\n$LOGOUT\n$SUSPEND\n$REBOOT\n$SHUTDOWN" | launch_rofi)
-
-case ${OPTION} in
-$LOCK)
-  sleep 0.3
-  hyprlock
-  ;;
-$LOGOUT) niri msg action quit ;;
-$SUSPEND) systemctl sleep ;;
-$REBOOT) systemctl reboot ;;
-$SHUTDOWN) systemctl poweroff ;;
+chosen="$(powermenu)"
+case "$chosen" in
+"$shutdown") systemctl poweroff ;;
+"$reboot") systemctl reboot ;;
+"$lock") hyprlock ;;
+"$sleep") systemctl sleep ;;
+"$logout") niri msg action quit ;;
+*) exit 0 ;;
 esac

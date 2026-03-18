@@ -7,13 +7,13 @@ configuration {
 @import "mocha"
 
 * {
-  accent: @mauve;
+  bg: @base;
   fg: @text;
 
   bg-alt: @crust;
   fg-alt: @text;
 
-  background-color: @mantle;
+  background-color: @bg;
   text-color: @fg;
 }
 
@@ -22,30 +22,32 @@ window {
     width:                       30%;
     padding:                     10px;
     border:                      2px solid;
-    border-color:                @accent;
-    background-color:            @mantle;
+    border-color:                @mauve;
+    border-radius:               5px;
+    background-color:            @bg;
 }
 
 inputbar {
     spacing:                     10px;
     margin:                      0 0 10px 0;
-    padding:					           8px 0;
+    padding:					 8px 0;
     children:                    [ "prompt", "entry" ];
-    border:                      0 0 1px 0 solid;
-    border-color:                @accent;
+    border:                      0 solid 0 solid 1px solid 0 solid;
+    border-color:                @mauve;
 }
 
 prompt {
-    text-color:                  @accent;
+    text-color:                  @mauve;
 }
 
 entry {
     cursor:                      text;
     placeholder:                 "Search application";
+    border-radius:               4px;
 }
 
 listview {
-	  dynamic:					           true;
+	dynamic:					 true;
     columns:                     1;
     lines:                       10;
 }
@@ -60,23 +62,24 @@ element {
 element-text {
     background-color:            inherit;
     text-color:                  inherit;
-    vertical-align:				       0.5;
+    vertical-align:				 0.5;
 }
 element normal.normal {
-    background-color:            @mantle;
+    background-color:            @bg;
     text-color:                  @text;
 }
 element selected.normal {
     background-color:            @bg-alt;
-    text-color:                  @accent;
+    text-color:                  @mauve;
     border:                      1px solid;
-    border-color:                @accent;
+    border-color:                @mauve;
+    border-radius:               5px;
 }
 element-icon {
-    background-color:            @mantle;
+    background-color:            @bg;
     size:                        20px;
-    margin: 			               0 10px 0 0;
+    margin: 			         0 10px 0 0;
 }
 element-icon selected {
-    background-color:		 	       @bg-alt;
+    background-color:		 	 @bg-alt;
 }

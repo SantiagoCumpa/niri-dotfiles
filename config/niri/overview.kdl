@@ -1,7 +1,7 @@
 // Overview
 overview {
 	zoom 0.5
-	backdrop-color "#0f0f0f"
+	backdrop-color "#181825"
 
 	workspace-shadow {
 	//	off

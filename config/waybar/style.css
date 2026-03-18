@@ -1,18 +1,18 @@
 @import "colors.css";
 
 * {
-	font-family: "JetBrainsMono Nerd Font";
-  	font-size: 13px;
-	font-weight: bold;
-  	padding: 0;
-  	margin: 0;
-  	border: none;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 /*---WAYBAR---*/
 #waybar {
-	background: @gray950;
-	border: 1.5px solid @gray300;
+	background: @mantle;
+	border: 0.5px solid @mauve;
 }
 
 /*---WORKSPACES---*/
@@ -20,14 +20,18 @@
 	background: transparent;
 }
 #workspaces button {
-  	background: transparent;
-  	color: @gray300;
   	border: none;
   	padding: 0 0.4rem;
 }
 #workspaces label               { font-size: 14px;  }
-#workspaces button.active       { color: @gray200;   }
-#workspaces button.empty        { color: @gray500; }
+#workspaces button:nth-child(1) { color: @blue;		}
+#workspaces button:nth-child(2) { color: @red;      }
+#workspaces button:nth-child(3) { color: @peach;    }
+#workspaces button:nth-child(4) { color: @sky;      }
+#workspaces button:nth-child(5) { color: @pink;     }
+#workspaces button:nth-child(6) { color: @green;    }
+#workspaces button.active       { color: @yellow;   }
+#workspaces button.empty        { color: @text; }
 #workspaces button:hover {
   	box-shadow: inherit;
   	text-shadow: inherit;
@@ -46,8 +50,7 @@
 #bluetooth,
 #backlight,
 #battery,
-#clock,
-#power {
+#clock {
 	background: transparent;
  	padding: 0.5rem;
 }
@@ -56,61 +59,57 @@
 #custom-logo {
  	padding: 0 1rem;
 	font-size: 16px;
-	color: @gray200;
+	color: @blue;
 }
 
 /*---USER(UPTIME)---*/
 #user {
- 	color: @gray200;
+  color: @rosewater;
 }
 
 /*---RAM---*/
 #memory {
- 	color: @gray300;
+  color: @flamingo;
 }
 
 /*---CPU---*/
 #cpu {
- 	color: @gray400;
+  color: @pink;
 }
 
 /*---IDLE---*/
 #idle_inhibitor {
- 	color: @gray400;
+ 	color: @mauve;
 }
-#idle_inhibitor.activated {
- 	color: @gray100;
-}
-
 
 /*---MUSIC---*/
 #custom-music {
- 	color: @gray200;
+ 	color: @red;
 }
 
 /*---KEYBOARD-LANG---*/
 #language {
- 	color: @gray300;
+ 	color: @maroon;
 }
 
 /*---VOLUME---*/
 #wireplumber {
- 	color: @gray300;
+ 	color: @peach;
 }
 
 /*---NETWORK---*/
 #network {
- 	color: @gray200;
+ 	color: @text;
 }
 
 /*---BLUETOOTH---*/
 #bluetooth {
- 	color: @gray200;
+ 	color: @blue;
 }
 
 /*---BACKLIGHT---*/
 #backlight {
- 	color: @gray100;
+ 	color: @yellow;
 }
 
 /*---BATTERY---*/
@@ -129,12 +128,9 @@
 
 /*---CLOCK&DATE---*/
 #clock.time {
- 	color: @gray300;
+ 	color: @lavender;
 }
 #clock.date {
- 	color: @gray200;
+ 	color: @mauve;
 }
 
-#custom-separator {
-    color: @gray300;
-}

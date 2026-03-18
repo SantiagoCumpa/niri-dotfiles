@@ -38,7 +38,7 @@ neovim
 niri
 npm
 ntfs-3g
-nvidia
+nvidia-open
 nvidia-prime
 nvidia-settings
 otf-geist-mono-nerd
@@ -54,7 +54,6 @@ snapper
 sof-firmware
 superfile
 termscp
-tlp
 ttf-cascadia-mono-nerd
 ttf-jetbrains-mono-nerd
 ttf-roboto-mono-nerd
