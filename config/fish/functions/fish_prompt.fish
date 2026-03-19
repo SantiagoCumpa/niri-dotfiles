@@ -12,8 +12,6 @@ function fish_prompt
     set -l seg_git_fg   "#11111b"   # text
     set -l seg_err_bg   "#f38ba8"   # red
     set -l seg_err_fg   "#181825"   # text
-    set -l seg_pmt_bg   "#181825"   # mantle
-    set -l seg_pmt_fg   "#cdd6f4"   # yellow
 
     # 1. USER and HOST
     set_color -b $seg_user_bg $seg_user_fg --bold
@@ -50,7 +48,8 @@ function fish_prompt
     end
 
     # 5. Prompt 
-    set_color -b $seg_pmt_bg $seg_pmt_fg
+    set_color normal
+
     set_color red
     printf '\n❯'
     set_color yellow
@@ -59,6 +58,8 @@ function fish_prompt
     printf '❯ '
     set_color white
 
+    set_color normal
+    
     # reset stopwatch
     set -g __cmd_start (date '+%s%3N')
 end
