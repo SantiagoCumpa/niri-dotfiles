@@ -1,3 +1,8 @@
+function _omp_since_start
+    set -l now (date '+%s%3N')
+    echo (math -s0 "$now - $__cmd_start")
+end
+
 function fish_right_prompt
     set -l t (date '+%T')               # HH:MM:SS
     set -l dur (_omp_since_start)
