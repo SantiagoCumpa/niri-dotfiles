@@ -20,8 +20,9 @@
 	background: transparent;
 }
 #workspaces button {
+  	background: transparent;
   	border: none;
-  	padding: 0 0.4rem;
+	padding: 0 0.4rem;
 }
 #workspaces label               { font-size: 14px;  }
 #workspaces button:nth-child(1) { color: @blue;		}
