@@ -1,0 +1,30 @@
+[general]
+import = [
+	"~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[window]
+padding = { x = 20, y = 20 }
+opacity = 0.95
+
+[scrolling]
+history = 5000
+
+[cursor]
+style = { blinking = "Always" }
+thickness = 0.2
+
+[terminal]
+shell = "fish"
+
+[mouse]
+hide_when_typing = true
+bindings = [
+    { mouse = "Right", mods = "Control", action = "Copy" },
+    { mouse = "Right", action = "Paste" },
+]
+
+[font]
+normal = { family = "GeistMono Nerd Font" }
+size = 10
+
