@@ -1,6 +1,6 @@
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-    gaps 20 
+    gaps 15 
     center-focused-column "never"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
