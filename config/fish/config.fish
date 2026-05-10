@@ -3,9 +3,6 @@ if status is-interactive
    fastfetch
 end
 
-# Variables
-set -gx MICRO_TRUECOLOR 1
-
 # FZF Default Style
 set -gx FZF_DEFAULT_OPTS "\
 --color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
@@ -29,7 +26,8 @@ alias gadd='git add'
 alias gcom='git commit -m'
 alias gpsh='git push'
 alias gsts='git status'
-alias gcho='git checkout -b'
+alias gbra='git branch'
+alias gswc='git switch'
 alias gpll='git pull'
 alias glog='git log'
 
