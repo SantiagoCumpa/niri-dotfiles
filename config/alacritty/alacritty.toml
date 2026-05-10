@@ -4,8 +4,8 @@ import = [
 ]
 
 [window]
-padding = { x = 20, y = 20 }
-opacity = 0.95
+padding = { x = 15, y = 15 }
+opacity = 0.975
 
 [scrolling]
 history = 5000
@@ -19,10 +19,6 @@ shell = "fish"
 
 [mouse]
 hide_when_typing = true
-bindings = [
-    { mouse = "Right", mods = "Control", action = "Copy" },
-    { mouse = "Right", action = "Paste" },
-]
 
 [font]
 normal = { family = "GeistMono Nerd Font" }

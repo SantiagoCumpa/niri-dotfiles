@@ -18,7 +18,7 @@
     	"custom/separator",
     	"cpu",
     	"custom/separator",
-    	"idle_inhibitor",
+    	"idle_inhibitor"
     	],
     "modules-center": [
     	"custom/music"
@@ -38,11 +38,11 @@
     	"custom/separator",
     	"clock#time",
     	"custom/separator",
-    	"clock#date",
+    	"clock#date"
     	],
     "custom/logo": {
         "format": "",
-        "tooltip": false,
+        "tooltip": false
      },
     "niri/workspaces": {
          "disable-scroll": true,
@@ -51,11 +51,11 @@
          	"active":  "󰮯",
          	"default": "󰊠",
          	"empty": "󰧵",         	
-         	"urgent": "󱙝",
+         	"urgent": "󱙝"
          },
          "persistent-workspaces": {
             "*": [1,2,3,4,5,6] 
-         },
+         }
     },
     "user": {
 		"format": "󱎫 {work_H}h:{work_M}m",
@@ -110,13 +110,13 @@
         "format-disconnected" : "󰤭",
         "tooltip": false,
     	"interval": 20,
-    	"on-click": "kitty --class tui -e impala"
+    	"on-click": "alacritty --class tui -e impala"
     },
     "bluetooth": {
     	"format": "",
     	"format-disabled": "󰂲",
     	"format-connected": " {num_connections}",
-    	"on-click": "kitty --class tui -e bluetui"
+    	"on-click": "alacritty --class tui -e bluetui"
     },
     "backlight": {
         "device": "intel_backlight",
@@ -130,11 +130,11 @@
             "critical": 10
         },
         "format": "{icon} {capacity}%",
-		"format-icons": {	
+	"format-icons": {	
 	        "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-	        "default":  ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-		},
-		"tootip": false
+	        "default":  ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+	},
+	"tootip": false
     },
     "clock#date": {
         "format": "󰸗 {:%d/%m/%Y}",
@@ -144,5 +144,5 @@
         "timezone": "America/Lima",
         "format": " {:%H:%M}",
         "tooltip": false
-    },
+    }
 }
