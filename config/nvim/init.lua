@@ -1,0 +1,6 @@
+require("config.plugins")
+require("config.theme")
+require("config.mini")
+require("config.snacks")
+require("config.extras")
+require("config.options")
