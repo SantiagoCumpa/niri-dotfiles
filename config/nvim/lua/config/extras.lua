@@ -23,8 +23,12 @@ require("lualine").setup({
 	},
 })
 
-
-require("which-key").setup({
-	delay = 250,
-	preset = "modern",
+require("mason").setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    }
+  }
 })

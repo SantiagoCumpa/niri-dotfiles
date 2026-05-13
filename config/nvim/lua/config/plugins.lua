@@ -5,10 +5,13 @@ vim.pack.add({"https://github.com/catppuccin/nvim"})
 vim.pack.add({'https://github.com/nvim-lualine/lualine.nvim'})
 
 -- Keybinds helper
-vim.pack.add({"https://github.com/folke/which-key.nvim"})
+-- vim.pack.add({"https://github.com/folke/which-key.nvim"})
 
 -- Snacks
 vim.pack.add({"https://github.com/folke/snacks.nvim"})
 
 -- Mini.nvim
 vim.pack.add({"https://github.com/nvim-mini/mini.nvim"})
+
+-- Mason lsp tools installer
+vim.pack.add({"https://github.com/mason-org/mason.nvim"})
