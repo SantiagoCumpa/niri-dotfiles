@@ -1,7 +1,5 @@
 [general]
-import = [
-	"~/.config/alacritty/catppuccin-mocha.toml"
-]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [window]
 padding = { x = 15, y = 15 }
@@ -14,13 +12,9 @@ history = 5000
 style = { blinking = "Always" }
 thickness = 0.2
 
-[terminal]
-shell = "fish"
-
 [mouse]
 hide_when_typing = true
 
 [font]
 normal = { family = "GeistMono Nerd Font" }
-size = 10
-
+size = 9
