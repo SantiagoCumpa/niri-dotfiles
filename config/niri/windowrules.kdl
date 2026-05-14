@@ -14,14 +14,12 @@ window-rule {
 }
 window-rule {
     match is-window-cast-target=true
-
     border {
         on
         width 2
         active-color "#74c7ec"
         inactive-color "#82A4B3"
     }
-
     shadow {
         on
         spread 0.75
@@ -29,7 +27,6 @@ window-rule {
         color "#74c7ec"
         inactive-color "#82A4B3"
     }
-
     tab-indicator {
         active-color "#74c7ec"
         inactive-color "#82A4B3"
