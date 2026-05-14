@@ -12,3 +12,26 @@ window-rule {
 	default-column-width { fixed 1400; }
 	default-window-height { fixed 800; }
 }
+window-rule {
+    match is-window-cast-target=true
+
+    border {
+        on
+        width 2
+        active-color "#74c7ec"
+        inactive-color "#82A4B3"
+    }
+
+    shadow {
+        on
+        spread 0.75
+        softness 20
+        color "#74c7ec"
+        inactive-color "#82A4B3"
+    }
+
+    tab-indicator {
+        active-color "#74c7ec"
+        inactive-color "#82A4B3"
+    }
+}
