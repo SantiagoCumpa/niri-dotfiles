@@ -1,10 +1,6 @@
-require("config.plugins")
-require("config.theme")
-require("config.mini")
-require("config.snacks")
-require("config.extras")
+require("plugins")
 require("config.options")
 require("config.keybinds")
 require("config.lsp")
 
-require('extras')
+

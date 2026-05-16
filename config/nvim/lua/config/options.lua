@@ -7,15 +7,13 @@ vim.opt.relativenumber = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.termguicolors = true
--- vim.o.laststatus = 3
 -- vim.opt.cmdheight = 0
 vim.opt.fillchars = "eob: "
 vim.o.pumborder = "single"
-vim.o.pumheight = 10
+vim.o.pumheight = 15
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
@@ -43,3 +41,4 @@ vim.filetype.add({
 		["compose.yaml"] = "yaml.docker-compose",
 	},
 })
+

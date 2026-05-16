@@ -47,7 +47,8 @@ local function show_blame_inline()
 	-- don't show if no info
 	local line_text = vim.api.nvim_buf_get_lines(bufnr, line - 1, line, false)[1]
 	if not line_text or line_text:match("^%s*$") then return end
-	--	only support file buffer
+
+	--	only support files
 	if file == "" or not vim.uv.fs_stat(file) then return end
 
 	-- get git blame information

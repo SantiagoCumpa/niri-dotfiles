@@ -13,6 +13,8 @@ vim.lsp.config('rust_ls', {
         enable = true,
       },
     }
-  }
+  },
 })
+
+
 vim.lsp.enable('rust_ls')
