@@ -43,15 +43,25 @@ require("mini.visits").setup()
 local miniclue = require('mini.clue')
 miniclue.setup({
 	triggers = {
-		{ mode = 'n', keys = '<Leader>' },
-		{ mode = 'x', keys = '<Leader>' },
-
-		{ mode = 'n', keys = 'g' }, { mode = 'x', keys = 'g' },
-		{ mode = 'n', keys = "'" }, { mode = 'n', keys = '`' }, { mode = 'x', keys = "'" }, { mode = 'x', keys = '`' },
-		{ mode = 'n', keys = '"' }, { mode = 'x', keys = '"' }, { mode = 'i', keys = '<C-r>' }, { mode = 'c', keys = '<C-r>' },
-		{ mode = 'n', keys = '<C-w>' },
-		{ mode = 'n', keys = 'z' }, { mode = 'x', keys = 'z' },
-		{ mode = 'n', keys = '[' }, { mode = 'n', keys = ']' },
+		-- Leader triggers
+		{ mode = { 'n', 'x' }, keys = '<Leader>' },
+		-- `[` and `]` keys
+		{ mode = 'n',          keys = '[' },
+		{ mode = 'n',          keys = ']' },
+		-- Built-in completion
+		{ mode = 'i',          keys = '<C-x>' },
+		-- `g` key
+		{ mode = { 'n', 'x' }, keys = 'g' },
+		-- Marks
+		{ mode = { 'n', 'x' }, keys = "'" },
+		{ mode = { 'n', 'x' }, keys = '`' },
+		-- Registers
+		{ mode = { 'n', 'x' }, keys = '"' },
+		{ mode = { 'i', 'c' }, keys = '<C-r>' },
+		-- Window commands
+		{ mode = 'n',          keys = '<C-w>' },
+		-- `z` key
+		{ mode = { 'n', 'x' }, keys = 'z' },
 	},
 
 	clues = {
@@ -60,13 +70,20 @@ miniclue.setup({
 		miniclue.gen_clues.registers(),
 		miniclue.gen_clues.windows(),
 		miniclue.gen_clues.z(),
-		miniclue.gen_clues.square_brackets(), -- (Añadido recientemente al plugin)
+		miniclue.gen_clues.square_brackets(),
 
-		-- Definir nombres para tus propios grupos de atajos personalizados
-		{ mode = 'n', keys = '<Leader>f', desc = '+Find (Búsqueda)' },
-		{ mode = 'n', keys = '<Leader>g', desc = '+Git' },
-		{ mode = 'n', keys = '<Leader>l', desc = '+LSP / Código' },
+		-- custom keybinds
+		{ mode = 'n', keys = '<leader>b', desc = 'Buffer' },
+		{ mode = 'n', keys = '<leader>d', desc = 'Docker' },
+		{ mode = 'n', keys = '<leader>f', desc = 'Find' },
+		{ mode = 'n', keys = '<leader>l', desc = 'LSP' },
+		{ mode = 'n', keys = '<leader>g', desc = 'Git' },
+		{ mode = 'n', keys = '<leader>t', desc = 'Terminal' },
+		{ mode = 'n', keys = '<leader>u', desc = 'UI' },
 	},
+	window = {
+		delay = 250
+	}
 })
 
 -- better words
@@ -107,9 +124,6 @@ MiniNotify.setup({
 			return string.format(" %s  %s%s", icon, notif.msg, padding)
 		end
 	},
-	window = {
-		border = "rounded"
-	}
 })
 
 -- show spaces

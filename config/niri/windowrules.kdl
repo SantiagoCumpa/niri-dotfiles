@@ -8,7 +8,6 @@ window-rule {
 window-rule {
 	match app-id="fm"
 	open-floating true
-	opacity 0.95
 	default-column-width { fixed 1400; }
 	default-window-height { fixed 800; }
 }

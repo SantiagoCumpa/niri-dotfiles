@@ -10,7 +10,8 @@ local lsp_servers = {
 	'rust',
 	'tailwind',
 	'toml',
-	'yaml'
+	'yaml',
+	'go'
 }
 
 local function start_lsp(servers)
@@ -20,7 +21,7 @@ local function start_lsp(servers)
 		local success, error_msg = pcall(require, module_path)
 
 		if success then
-			vim.lsp.enable(server)
+			-- vim.lsp.enable(server)
 		else
 			local msg = string.format("Error initializing LSP [%s]:\n%s", server, error_msg)
 			vim.notify(msg, vim.log.levels.WARN, { title = "LSP Config" })

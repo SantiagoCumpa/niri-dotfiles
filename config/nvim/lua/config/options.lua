@@ -19,7 +19,9 @@ vim.opt.scrolloff = 10
 
 -- show diagnostics
 vim.diagnostic.config({
-	virtual_text = true,
+	virtual_text = {
+		prefix = " ●"
+	},
 	signs = {
 		text = {
 			[vim.diagnostic.severity.ERROR] = "",
@@ -30,6 +32,7 @@ vim.diagnostic.config({
 	},
 	underline = true,
 	severity_sort = true,
+	update_in_insert = false,
 })
 
 -- change dockerfiles type
@@ -42,3 +45,27 @@ vim.filetype.add({
 	},
 })
 
+local function remove_diagnostic_italics()
+	local diagnostics = {
+		"DiagnosticError", "DiagnosticWarn", "DiagnosticInfo", "DiagnosticHint", "DiagnosticOk",
+
+		"DiagnosticVirtualTextError", "DiagnosticVirtualTextWarn",
+		"DiagnosticVirtualTextInfo", "DiagnosticVirtualTextHint", "DiagnosticVirtualTextOk",
+
+		"DiagnosticFloatingError", "DiagnosticFloatingWarn",
+		"DiagnosticFloatingInfo", "DiagnosticFloatingHint", "DiagnosticFloatingOk",
+	}
+
+	for _, group in ipairs(diagnostics) do
+		local hl = vim.api.nvim_get_hl(0, { name = group, link = false })
+		hl.italic = false
+		vim.api.nvim_set_hl(0, group, hl)
+	end
+end
+
+remove_diagnostic_italics()
+-- Asegurar que se mantenga si el tema (colorscheme) se recarga
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = remove_diagnostic_italics,
+})

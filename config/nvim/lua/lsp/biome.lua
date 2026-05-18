@@ -1,5 +1,5 @@
 --- Biome language server configuration
-vim.lsp.config('biome', {
+vim.lsp.config('biome_ls', {
   cmd = function(dispatchers, config)
     local cmd = 'biome'
     if config and config.root_dir then
@@ -18,4 +18,4 @@ vim.lsp.config('biome', {
   workspace_required = true
 })
 
-vim.lsp.enable('biome')
+vim.lsp.enable('biome_ls')

@@ -4,16 +4,12 @@ vim.lsp.config('tailwind_ls', {
   filetypes = {
     -- html
     "astro",
-    "astro-markdown",
-    "ejs",
     "html",
     "htmlangular",
     "markdown",
-    "mdx",
     -- css
     "css",
     "less",
-    "postcss",
     "sass",
     "scss",
     -- js
