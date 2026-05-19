@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-map = vim.keymap.set
+local map = vim.keymap.set
 
 -- disable space move
 map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -10,8 +10,10 @@ map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- autocompletion
 map("i", "<C-space>", vim.lsp.completion.get, { desc = "Trigger autocompletion" })
 
+-- LSP
 -- format file
 map('n', '<leader>lf', function() vim.lsp.buf.format(bufnr) end, { desc = "Format current file" })
+map('n', '<leader>ld', function() vim.diagnostic.open_float() end, { desc = "Open float diagnostics"})
 
 -- Mini
 -- files
