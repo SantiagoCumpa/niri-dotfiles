@@ -1,6 +1,3 @@
--- animations
--- require("mini.animate").setup()
-
 -- icons
 local MiniIcons = require("mini.icons")
 MiniIcons.setup()
@@ -27,6 +24,10 @@ require("mini.diff").setup({
 
 -- file manager
 require("mini.files").setup()
+
+
+-- buffer tabs
+require("mini.tabline").setup()
 
 -- recent files
 require("mini.pick").setup({
