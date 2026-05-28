@@ -1,22 +1,22 @@
 @import "mocha"
 configuration {
-  show-icons:                  false;
-  location:			 		 					 7;
-	
+    show-icons:                 true;
+		location: 5;
 }
 
 /*
 USE_BUTTONS=YES
 */
+* {
+	font: "GeistMono NF 10";
+}
 
 window {
-	x-offset:										 5px;
-	y-offset:										 -5px;
-  width:                       15%;
+  width:                       20%;
   margin:                      0px;
-  padding:                     10px 15px;
+  padding:                     10px 10px;
   border:                      2px solid;
-  border-color:		 						 @maroon;
+  border-color:		 						 @lavender;
   background-color:            @base;
   children: 			 		 				 [ "message", "listview" ];
 }
@@ -25,10 +25,10 @@ message {
   padding:                     5px 0;
   margin:                      0 0 10px 0;
   background-color:            transparent;
-  text-color:					         @maroon;
+  text-color:					         @lavender;
   font-weight:				 			   bold;
   border:						   				 0px 0px 1px solid;
-  border-color:				 			   @maroon;
+  border-color:				 			   @lavender;
 }
 
 textbox {
@@ -39,27 +39,31 @@ textbox {
 
 listview {
   enabled:                     true;
-  columns:                     1;
-  lines:                       5;
+  columns:                     2;
+  lines:                       2;
   layout:                      vertical;
+	flow:												 horizontal;
   background-color:	 	 	  		 transparent;
 }
 
 element {
   padding:					 					 10px;
-  border-color:                @maroon;
+  border-color:                @lavender;
   background-color:            @base;
   text-color:                  @text;
   cursor:                      pointer;
+	children:										 [ element-icon ];
+}
+element-icon {
+    background-color:          @base;
+    size:                      180px;
+    margin: 			         		 0 10px 0 0;
+}
+element-icon.selected {
+    background-color:          @crust;
 }
 element selected.normal {
 	border: 					 					 1px solid;
   background-color:            @crust;
-  text-color:                  @maroon;
-}
-element-text {
-  background-color:            transparent;
-  text-color:                  inherit;
-  cursor:                      inherit;
-  vertical-align:              0.5;
+  text-color:                  @lavender;
 }

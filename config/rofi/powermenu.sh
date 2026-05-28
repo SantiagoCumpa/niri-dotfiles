@@ -16,7 +16,7 @@ powermenu() {
     rofi -dmenu \
       -p "Uptime: $uptime" \
       -mesg "Uptime: $uptime" \
-      -theme ./powermenu.rasi
+      -theme "$HOME/.config/rofi/powermenu.rasi"
 }
 
 chosen="$(powermenu)"

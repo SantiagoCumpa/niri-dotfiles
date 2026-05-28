@@ -20,7 +20,7 @@ formats=(
 launch_rofi() {
 	rofi -dmenu \
 		 -mesg "Select color format" \
-		 -theme $HOME/.config/rofi/themes/colorpicker.rasi
+		 -theme "$HOME/.config/rofi/colorpicker.rasi"
 }
 
 chosen=$(printf '%s\n' "${formats[@]}" | launch_rofi)
@@ -34,6 +34,6 @@ color=$(hyprpicker --format "$format")
 
 [[ -z "$color" ]] && exit 0
 
-paplay $SOUND_PATH/pick.mp3 &
+paplay "$SOUND_PATH/pick.mp3" &
 wl-copy "$color"
-notify-send -i $ICON_PATH/pipette.svg -a gray " Color [$color]($format) on clipboard"
+notify-send -i "$ICON_PATH/pipette.svg" -a gray " Color [$color]($format) on clipboard"
