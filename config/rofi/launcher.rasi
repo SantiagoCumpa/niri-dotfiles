@@ -42,7 +42,6 @@ prompt {
 entry {
     cursor:                    text;
     placeholder:               "Search application";
-    border-radius:             4px;
 }
 
 listview {
@@ -72,7 +71,6 @@ element selected.normal {
     text-color:                @mauve;
     border:                    1px solid;
     border-color:              @mauve;
-    border-radius:             5px;
 }
 element-icon {
     background-color:          @bg;
