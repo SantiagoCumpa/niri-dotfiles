@@ -1,0 +1,74 @@
+configuration {
+  modes:                      [ssh];
+  display-ssh:               "  ";
+  location:                    6;
+}
+@import "mocha"
+
+* {
+  bg: @base;
+  fg: @text;
+
+  bg-alt: @crust;
+  fg-alt: @text;
+
+	accent: @green;
+
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window {
+  width:                       15%;
+  padding:                     10px;
+  border:                      2px solid;
+  border-color:                @accent;
+  background-color:            @bg;
+}
+
+inputbar {
+  spacing:                   10px;
+  margin:                    0 0 10px 0;
+  padding:					 				 8px 0;
+  children:                  [ "prompt", "entry" ];
+  border:                    0 solid 0 solid 1px solid 0 solid;
+  border-color:              @accent;
+}
+
+prompt {
+  text-color:                @accent;
+}
+
+entry {
+  cursor:                    text;
+  placeholder:               "Enter host";
+}
+
+listview {
+	dynamic:					 				 true;
+  columns:                   1;
+  lines:                     5;
+}
+
+element {
+  margin:                    0px;
+  padding:                   10px;
+  border:                    0px solid;
+  background-color:          transparent;
+  cursor:                    pointer;
+}
+element-text {
+  background-color:          inherit;
+  text-color:                inherit;
+  vertical-align:				 		 0.5;
+}
+element normal.normal {
+  background-color:          @bg;
+  text-color:                @text;
+}
+element selected.normal {
+  background-color:          @bg-alt;
+  text-color:                @accent;
+  border:                    1px solid;
+  border-color:              @accent;
+}

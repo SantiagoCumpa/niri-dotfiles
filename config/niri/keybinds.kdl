@@ -8,6 +8,7 @@ binds {
     Mod+Q         { spawn ".config/rofi/launcher.sh"; }
     Mod+P         { spawn ".config/rofi/colorpicker.sh"; }
     Mod+H         { spawn ".config/rofi/clipboard.sh"; }
+    Mod+G         { spawn ".config/rofi/ssh.sh"; }
     Mod+Backspace { spawn ".config/rofi/powermenu.sh"; }
  
     // Pipewire
