@@ -14,13 +14,11 @@ hotkey-overlay {
 prefer-no-csd
 
 // You can also set this to null to disable saving screenshots to disk.
-screenshot-path null
+screenshot-path "/tmp/screenshot.png"
 // screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 xwayland-satellite {
-    path "xwayland-satellite"
+	// off
+  path "xwayland-satellite"
 }
 
-
-// Animations
-// https://yalter.github.io/niri/Configuration:-Animations
