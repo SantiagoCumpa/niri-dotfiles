@@ -95,10 +95,8 @@ binds {
   Mod+Space { switch-layout "next"; }
 
 	// Screenshot
-  // Mod+Shift+S { screenshot; }
+  Mod+Shift+S { screenshot; }
   Ctrl+Print { screenshot-screen; }
-  // Mod+Shift+S { spawn-sh "rm -f /tmp/screenshot.png && niri msg action screenshot && while [ ! -f /tmp/screenshot.png ]; do sleep 0.05; done && satty -f /tmp/screenshot.png"; }
-  Mod+Shift+S { spawn-sh "niri msg action screenshot && niri msg --json event-stream | grep -m 1 ScreenshotCaptured && wl-paste | satty --early-exit --copy-command wl-copy -f -"; }
   Alt+Print { screenshot-window; }
   Mod+Shift+Backspace { quit; }
 }

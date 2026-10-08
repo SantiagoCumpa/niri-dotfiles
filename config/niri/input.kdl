@@ -2,7 +2,8 @@
 input {
     keyboard {
         xkb {
-            layout "latam"
+            // layout "latam"
+            layout "us"
         }
         numlock
     }
