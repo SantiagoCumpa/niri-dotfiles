@@ -7,7 +7,7 @@ vim.lsp.config('json_ls', {
   settings = {
     json = {
       validate = { enable = true },
-      format = { enable = false }, -- Doble seguridad para silenciar el formateo
+      format = { enable = true }
     }
   }
 })

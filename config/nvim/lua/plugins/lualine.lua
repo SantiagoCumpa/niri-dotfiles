@@ -1,5 +1,3 @@
-local MiniIcons = require('mini.icons')
-
 require("lualine").setup({
 	options = {
 		globalstatus = true,

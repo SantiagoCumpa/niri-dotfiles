@@ -4,11 +4,62 @@ MiniIcons.setup()
 MiniIcons.tweak_lsp_kind()
 MiniIcons.mock_nvim_web_devicons()
 
+-- colors
+require("mini.colors").setup()
+
+-- file manager
+require("mini.files").setup({
+	windows = {
+		width_focus = 75,
+	}
+})
+
+-- sessions
+require("mini.sessions").setup({
+	autoread = false,
+	autowrite = true,
+	hooks = {
+		pre = { write = function() pcall(MiniFiles.close) end }, -- no guardar el explorador abierto
+	},
+})
+
+-- starter
+local starter = require("mini.starter")
+starter.setup({
+	evaluate_single = true,
+	items = {
+		starter.sections.sessions(),
+		starter.sections.recent_files(),
+		starter.sections.builtin_actions()
+	},
+	header = table.concat({
+		'███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
+		'████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
+		'██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
+		'██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+		'██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
+		'╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝'
+	}, '\n'),
+
+	footer = 'Welcome back! :3',
+	content_hooks = {
+		starter.gen_hook.adding_bullet('• '),
+		starter.gen_hook.indexing('all', { 'Builtin actions' }),
+		starter.gen_hook.aligning('center', 'center'),
+	},
+})
+
 -- generate pairs {} [] <> "" ''
 require("mini.pairs").setup()
 
 -- cmdline helpers
 require("mini.cmdline").setup()
+
+-- surround helpers
+-- require("mini.surround").setup()
+
+-- move
+require("mini.move").setup()
 
 -- completions
 require('mini.completion').setup()
@@ -22,12 +73,18 @@ require("mini.diff").setup({
 	},
 })
 
--- file manager
-require("mini.files").setup()
 
+-- input
+require("mini.input").setup()
 
 -- buffer tabs
 require("mini.tabline").setup()
+
+-- status column
+require("mini.statuscolumn").setup()
+
+-- buffer remove
+require("mini.bufremove").setup()
 
 -- recent files
 require("mini.pick").setup({
@@ -79,6 +136,7 @@ miniclue.setup({
 		{ mode = 'n', keys = '<leader>f', desc = 'Find' },
 		{ mode = 'n', keys = '<leader>l', desc = 'LSP' },
 		{ mode = 'n', keys = '<leader>g', desc = 'Git' },
+		{ mode = 'n', keys = '<leader>s', desc = 'Sessions' },
 		{ mode = 'n', keys = '<leader>t', desc = 'Terminal' },
 		{ mode = 'n', keys = '<leader>u', desc = 'UI' },
 	},

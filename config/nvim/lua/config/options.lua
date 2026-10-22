@@ -2,7 +2,6 @@ vim.cmd([[set noswapfile]])
 
 -- show numbers and set relative numbers
 vim.opt.number = true
-vim.opt.relativenumber = true
 -- better word finder
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -69,3 +68,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = remove_diagnostic_italics,
 })
+
+-- change cwd for mini files, picker, lazygit, etc
+if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 1 then
+	vim.fn.chdir(vim.fn.fnamemodify(vim.fn.argv(0), ':p'))
+end
+
+vim.o.sessionoptions = 'buffers,curdir,tabpages,winsize,folds'

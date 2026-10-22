@@ -1,0 +1,42 @@
+require('nvim-treesitter').install({
+	"c",
+	"astro",
+	"svelte",
+	"bash",
+	"fish",
+	"caddy",
+	"cmake",
+	"cpp",
+	"css",
+	"csv",
+	"desktop",
+	"dockerfile",
+	"go",
+	"html",
+	"http",
+	"java",
+	"javascript",
+	"jq",
+	"kotlin",
+	"lua",
+	"markdown",
+	"nginx",
+	"python",
+	"qmldir",
+	"qmljs",
+	"rust",
+	"svelte",
+	"sql",
+	"toml",
+	"typescript",
+	"yaml"
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = {
+		'lua', 'svelte', 'typescript', 'typescriptreact', 'javascript', 'javascriptreact',
+		'css', 'html', 'json', 'sh', 'bash', 'fish', 'c', 'cpp', 'rust', 'go',
+		'toml', 'yaml', 'dockerfile', 'qml', 'markdown',
+	},
+	callback = function() vim.treesitter.start() end,
+})

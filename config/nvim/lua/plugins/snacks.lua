@@ -1,6 +1,5 @@
 require("snacks").setup({
 	animate = { enabled = true },
-	dim = { enabled = true },
 	git = { enabled = true },
 	image = {
 		enable = true,
@@ -11,6 +10,7 @@ require("snacks").setup({
 			max_height = 40,
 		}
 	},
+	explorer = { enabled = false },
 	words = { enabled = true },
 	bufdelete = { enabled = true },
 	quickfile = { enabled = true },
@@ -19,7 +19,7 @@ require("snacks").setup({
 	},
 	terminal = {
 		win = {
-			style = "float",
+			-- style = "float",
 			border = "single",
 		},
 		shell = "fish"
@@ -32,5 +32,6 @@ require("snacks").setup({
 		}
 	},
 	scroll = { enabled = true },
+	dim = { enabled = true },
 	zen = { enabled = true, toggles = { dim = false } },
 })

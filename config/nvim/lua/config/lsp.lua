@@ -1,6 +1,7 @@
 local lsp_servers = {
 	'lua',
 	'typescript',
+	'svelte',
 	'biome',
 	'fish',
 	'bash',
@@ -11,7 +12,8 @@ local lsp_servers = {
 	'tailwind',
 	'toml',
 	'yaml',
-	'go'
+	'go',
+	'qml'
 }
 
 local function start_lsp(servers)
